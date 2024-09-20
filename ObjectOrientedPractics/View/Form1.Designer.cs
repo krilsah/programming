@@ -1,6 +1,8 @@
-﻿namespace ObjectOrientedPractics
+﻿using ObjectOrientedPractics.View;
+
+namespace ObjectOrientedPractics
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,12 +30,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            SuspendLayout();
+            // 
+            // MainForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Name = "MainForm";
+            Text = "Object Oriented Practics";
+            ResumeLayout(false);
+
+            userControl1.Location = new Point(3, 3);
+            userControl1.Name = "itemsTab1";
+            userControl1.Size = new Size(577, 429);
+            userControl1.TabIndex = 0;
+
+
+
         }
 
         #endregion
+
+        private View.UserControl1 userControl1;
+
+
+
     }
 }
