@@ -47,48 +47,57 @@
             // 
             // Items
             // 
+            Items.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             Items.Controls.Add(AddButton);
             Items.Controls.Add(RemoveButton);
             Items.Controls.Add(ItemsListBox);
-            Items.Dock = DockStyle.Left;
             Items.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
             Items.Location = new Point(0, 0);
             Items.Name = "Items";
-            Items.Size = new Size(405, 726);
+            Items.Size = new Size(395, 588);
             Items.TabIndex = 2;
             Items.TabStop = false;
             Items.Text = "Items";
             // 
             // AddButton
             // 
-            AddButton.Location = new Point(6, 636);
+            AddButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            AddButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            AddButton.Location = new Point(6, 534);
             AddButton.Name = "AddButton";
-            AddButton.Size = new Size(124, 46);
+            AddButton.Size = new Size(124, 41);
             AddButton.TabIndex = 3;
             AddButton.Text = "Add";
             AddButton.UseVisualStyleBackColor = true;
+            AddButton.Click += AddButton_Click;
             // 
             // RemoveButton
             // 
-            RemoveButton.Location = new Point(136, 636);
+            RemoveButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            RemoveButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            RemoveButton.Location = new Point(136, 534);
             RemoveButton.Name = "RemoveButton";
-            RemoveButton.Size = new Size(124, 46);
+            RemoveButton.Size = new Size(124, 41);
             RemoveButton.TabIndex = 2;
             RemoveButton.Text = "Remove";
             RemoveButton.UseVisualStyleBackColor = true;
+            RemoveButton.Click += RemoveButton_Click;
             // 
             // ItemsListBox
             // 
+            ItemsListBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             ItemsListBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 204);
             ItemsListBox.FormattingEnabled = true;
             ItemsListBox.ItemHeight = 15;
             ItemsListBox.Location = new Point(6, 22);
             ItemsListBox.Name = "ItemsListBox";
-            ItemsListBox.Size = new Size(374, 604);
+            ItemsListBox.Size = new Size(368, 499);
             ItemsListBox.TabIndex = 0;
+            ItemsListBox.SelectedIndexChanged += ItemsListBox_SelectedIndexChanged;
             // 
             // groupBoxRight
             // 
+            groupBoxRight.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBoxRight.BackColor = SystemColors.ButtonHighlight;
             groupBoxRight.Controls.Add(DescriptionBox);
             groupBoxRight.Controls.Add(label4);
@@ -98,22 +107,23 @@
             groupBoxRight.Controls.Add(label2);
             groupBoxRight.Controls.Add(label1);
             groupBoxRight.Controls.Add(IDbox);
-            groupBoxRight.Dock = DockStyle.Right;
             groupBoxRight.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            groupBoxRight.Location = new Point(386, 0);
+            groupBoxRight.Location = new Point(401, 0);
             groupBoxRight.Name = "groupBoxRight";
-            groupBoxRight.Size = new Size(504, 726);
+            groupBoxRight.Size = new Size(473, 588);
             groupBoxRight.TabIndex = 3;
             groupBoxRight.TabStop = false;
             groupBoxRight.Text = "Selected Item";
             // 
             // DescriptionBox
             // 
+            DescriptionBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             DescriptionBox.Location = new Point(10, 282);
             DescriptionBox.Multiline = true;
             DescriptionBox.Name = "DescriptionBox";
-            DescriptionBox.Size = new Size(566, 177);
+            DescriptionBox.Size = new Size(457, 177);
             DescriptionBox.TabIndex = 7;
+            DescriptionBox.TextChanged += DescriptionBox_TextChanged;
             // 
             // label4
             // 
@@ -127,11 +137,13 @@
             // 
             // NameBox
             // 
+            NameBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             NameBox.Location = new Point(10, 132);
             NameBox.Multiline = true;
             NameBox.Name = "NameBox";
-            NameBox.Size = new Size(566, 111);
+            NameBox.Size = new Size(457, 111);
             NameBox.TabIndex = 5;
+            NameBox.TextChanged += NameBox_TextChanged;
             // 
             // label3
             // 
@@ -149,6 +161,7 @@
             CostBox.Name = "CostBox";
             CostBox.Size = new Size(140, 23);
             CostBox.TabIndex = 3;
+            CostBox.TextChanged += CostBox_TextChanged;
             // 
             // label2
             // 
@@ -174,6 +187,7 @@
             // 
             IDbox.Location = new Point(64, 34);
             IDbox.Name = "IDbox";
+            IDbox.ReadOnly = true;
             IDbox.Size = new Size(140, 23);
             IDbox.TabIndex = 0;
             // 
@@ -184,7 +198,8 @@
             Controls.Add(groupBoxRight);
             Controls.Add(Items);
             Name = "UserControl1";
-            Size = new Size(890, 726);
+            Size = new Size(874, 588);
+            Load += ItemsTab_Load;
             Items.ResumeLayout(false);
             groupBoxRight.ResumeLayout(false);
             groupBoxRight.PerformLayout();

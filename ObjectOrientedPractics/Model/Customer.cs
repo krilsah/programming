@@ -1,4 +1,6 @@
 ﻿
+using System.Xml.Linq;
+
 namespace ObjectOrientedPractics
 {
     internal class Customer
@@ -16,11 +18,11 @@ namespace ObjectOrientedPractics
             { 
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException("Неправильно введенные данные");
+                    throw new ArgumentException();
                 }
                 if (value.Length>200)
                 {
-                    throw new ArgumentException("Слишком длинная строка");
+                    throw new ArgumentException();
                 }
                 _fullname = value; 
 
@@ -34,14 +36,31 @@ namespace ObjectOrientedPractics
             {
                 if (string.IsNullOrEmpty(value)) 
                 {
-                    throw new ArgumentException("Неправильно введенные данные");
+                    throw new ArgumentException();
                 }
                 if (value.Length > 500)
                 {
-                    throw new ArgumentException("Слишком длинная строка");
+                    throw new ArgumentException();
                 }
                 _address = value;
             }
+        }
+        private List<Customer> _Customers = new();
+        private Customer _currentCustomer;
+
+        public Customer(string name, string address)
+        {
+            Fullname = name;
+            Address = address;
+            _id = Idgenerator.GetNextId();
+        }
+        public Customer()
+        {
+
+        }
+        public override string ToString()
+        {
+            return Fullname;
         }
     }
 }

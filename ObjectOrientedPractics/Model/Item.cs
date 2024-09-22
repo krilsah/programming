@@ -17,11 +17,11 @@ namespace ObjectOrientedPractics
             { 
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException("Неправильно введеные данные");
+                    throw new ArgumentException();
                 }
                 if (value.Length>200) 
                 {
-                    throw new ArgumentException("Слишком длинная строка");
+                    throw new ArgumentException();
                 }
                 _name = value;
             }
@@ -35,11 +35,11 @@ namespace ObjectOrientedPractics
             {
                 if (string.IsNullOrEmpty(value))
                 {
-                    throw new ArgumentException("Неправильно введены данные");
+                    throw new ArgumentException();
                 }
                 if (value.Length > 1000)
                 {
-                    throw new ArgumentException("Слишком длинная строка");
+                    throw new ArgumentException();
                 }
                 _info = value;
             }
@@ -50,15 +50,15 @@ namespace ObjectOrientedPractics
             get { return _cost; }
             set
             {
-                if (_cost <= 0) 
+                if (value < 0) 
                 {
-                    throw new ArgumentException("Неправильно введеное значение");
+                    throw new ArgumentException();
                 }
-                if (_cost > 100000)
+                if (value > 100000)
                 {
-                    throw new ArgumentException("Слишком дорого");
+                    throw new ArgumentException();
                 }
-
+                _cost = value;
             }
         }
 
@@ -69,5 +69,15 @@ namespace ObjectOrientedPractics
             Cost = cost;
             _id = Idgenerator.GetNextId();
         }
+        public Item()
+        {
+
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
+
     }
 }
