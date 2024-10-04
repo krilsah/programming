@@ -5,7 +5,6 @@ namespace ObjectOrientedPractics.View
     {
         private Item _newestItem = new Item();
 
-        private bool buttonclickflag;
         public UserControl1()
         {
             InitializeComponent();
@@ -83,7 +82,7 @@ namespace ObjectOrientedPractics.View
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            Item _item = new Item($"Откуда мне знать его имя{_items.Count}", $"Тогда мои полномочия всё{_items.Count}", 25);
+            Item _item = new Item($"Томатный сок{_items.Count}", $"наверное вкусный, без добавления яблок{_items.Count}", 1);
             _items.Add(_item);
             ItemsListBox.DataSource = null;
             ItemsListBox.DataSource = _items;
