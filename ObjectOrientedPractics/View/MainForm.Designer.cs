@@ -59,7 +59,7 @@ namespace ObjectOrientedPractics
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(912, 698);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
+            tabPage1.Text = "Items";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // userControl11
@@ -69,6 +69,7 @@ namespace ObjectOrientedPractics
             userControl11.Name = "userControl11";
             userControl11.Size = new Size(906, 692);
             userControl11.TabIndex = 0;
+            userControl11.Load += userControl11_Load;
             // 
             // tabPage2
             // 
@@ -78,7 +79,7 @@ namespace ObjectOrientedPractics
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(912, 698);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
+            tabPage2.Text = "Customers";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // customersTab1
@@ -88,6 +89,7 @@ namespace ObjectOrientedPractics
             customersTab1.Name = "customersTab1";
             customersTab1.Size = new Size(906, 692);
             customersTab1.TabIndex = 0;
+            customersTab1.Load += customersTab1_Load;
             // 
             // MainForm
             // 

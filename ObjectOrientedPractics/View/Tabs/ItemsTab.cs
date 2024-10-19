@@ -1,4 +1,7 @@
 ﻿
+using System.Security.Cryptography;
+using System.Windows.Forms;
+
 namespace ObjectOrientedPractics.View
 {
     public partial class UserControl1 : UserControl
@@ -15,7 +18,7 @@ namespace ObjectOrientedPractics.View
 
         private void ItemsTab_Load(object sender, EventArgs e)
         {
-            Item item_0 = new Item("Ладно", "Важная информация о новом наборе для рисования", 225.6);
+            Item item_0 = new Item("Красные краски", "Сделаны из покупателей", 225.6);
             Item item_1 = new Item("Ладноверсия 2.0", "Разная информация наверное не одинаковая", 25.6);
             Item item_2 = new Item("сосиски", "мясо(2%)", 1.6);
             _items.Add(item_0);
@@ -82,7 +85,7 @@ namespace ObjectOrientedPractics.View
 
         private void AddButton_Click(object sender, EventArgs e)
         {
-            Item _item = new Item($"Томатный сок{_items.Count}", $"наверное вкусный, без добавления яблок{_items.Count}", 1);
+            Item _item = new Item($"Томатный сок{_items.Count}", "наверное вкусный, без добавления яблок", 1);
             _items.Add(_item);
             ItemsListBox.DataSource = null;
             ItemsListBox.DataSource = _items;

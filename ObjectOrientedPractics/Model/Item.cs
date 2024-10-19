@@ -70,6 +70,7 @@ namespace ObjectOrientedPractics
                 {
                     throw new ArgumentException();
                 }
+                _cost= value;
             }
         }
 

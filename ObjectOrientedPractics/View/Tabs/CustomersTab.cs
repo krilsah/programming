@@ -70,7 +70,7 @@ namespace ObjectOrientedPractics.View.Tabs
         }
         private void AddCustomerButton_Click(object sender, EventArgs e)
         {
-            Customer _customer = new Customer($"Откуда мне знать его имя{_Customers.Count}", $"Живет {_Customers.Count}");
+            Customer _customer = new Customer($"Откуда мне знать его имя{_Customers.Count}", "Живет");
             _Customers.Add(_customer);
             CustomersListBox.DataSource = null;
             CustomersListBox.DataSource = _Customers;

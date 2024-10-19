@@ -6,5 +6,15 @@ namespace ObjectOrientedPractics
         {
             InitializeComponent();
         }
+
+        private void customersTab1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userControl11_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
